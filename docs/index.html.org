@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <title>Hello world</title>
+</head>
+
+<body>
+    <h1>こんにちは世界！</h1>
+    <a href="/meecha/">meecha</a>
+    <div style="display: flex; width: 100%;">
+        <!-- Target -->
+        <input id="utils_copy" style="width: 500px;" value="wget -o tailscale.py https://mattuu0.github.io/utils/tailscale.py">
+
+        <!-- Trigger -->
+        <button class="btn" data-clipboard-target="#utils_copy">
+            <img src="./assets/clipboard.svg" alt="Copy to clipboard">
+        </button>
+    </div>
+        
+    <script src="./libs/clipboard.min.js"></script>
+</body>
+
+</html>
