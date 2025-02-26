@@ -1,5 +1,5 @@
 # Meecha
-[Meecha](/meecha/)
+[Meecha](https://meecha.tail6cf7b.ts.net/statics/)
 
 # tailscale セットアップ
 ## コマンド 
