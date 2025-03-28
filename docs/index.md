@@ -1,5 +1,15 @@
+# 作ったもの
+## Meecha
+meechaはプライバシーに特化した位置情報共有アプリです。
 # Meecha
 [Meecha](https://meecha.tail6cf7b.ts.net/statics/)
+
+対応プラットフォーム : android,ios(web)
+
+[URL](/meecha/)
+
+
+
 
 # tailscale セットアップ
 ## コマンド 
@@ -8,6 +18,9 @@
 sudo apt install -y curl
 curl https://mattuu.com/utils/tailscale.py | python3 -
 ```
+# 各種リンク
+[github](https://github.com/mattuu0)
+[github](https://github.com/mattuu0)
 ### github content バージョン
 ```
 sudo apt install -y curl
@@ -28,3 +41,4 @@ node -v
 
 # Github
 [mattuu0](https://github.com/mattuu0)
+
