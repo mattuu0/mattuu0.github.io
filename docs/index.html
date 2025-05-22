@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>あなたの名前のポートフォリオ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        xintegrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0V4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* スムーズスクロール */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* カスタムスクロールバー (モダンな見た目のため) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f0f0f0;
+            /* green-50 */
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #4ade80;
+            /* green-400 */
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #22c55e;
+            /* green-600 */
+        }
+
+        /* カスタムアニメーション */
+        @keyframes pulse-subtle {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.02);
+            }
+        }
+
+        .animate-pulse-subtle {
+            animation: pulse-subtle 3s infinite ease-in-out;
+        }
+
+        /* ローディングスピナーアニメーション */
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .animate-spin-fast {
+            animation: spin 0.8s linear infinite;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-white text-gray-800">
+
+    <header class="bg-white shadow-sm py-4 sticky top-0 z-50">
+        <div class="container mx-auto px-4 flex justify-center items-center">
+            <nav>
+                <ul class="flex flex-wrap justify-center space-x-4 md:space-x-6">
+                    <li><a href="#about"
+                            class="text-lg font-medium text-gray-700 hover:text-green-700 hover:underline transition duration-300 rounded-md p-2">自己紹介</a>
+                    </li>
+                    <li><a href="#skills"
+                            class="text-lg font-medium text-gray-700 hover:text-green-700 hover:underline transition duration-300 rounded-md p-2">スキル</a>
+                    </li>
+                    <li><a href="#projects"
+                            class="text-lg font-medium text-gray-700 hover:text-green-700 hover:underline transition duration-300 rounded-md p-2">作品</a>
+                    </li>
+                    <li><a href="#contact"
+                            class="text-lg font-medium text-gray-700 hover:text-green-700 hover:underline transition duration-300 rounded-md p-2">連絡先</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="bg-green-700 text-white py-28 text-center rounded-b-3xl shadow-xl relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-green-700 to-green-800 opacity-90"></div>
+        <div class="absolute inset-0 z-0 opacity-10">
+            <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                    <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+                        <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-width="0.1" />
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grid)" />
+                <circle cx="20" cy="20" r="15" fill="white" opacity="0.05" />
+                <circle cx="80" cy="50" r="25" fill="white" opacity="0.03" />
+                <rect x="50" y="10" width="30" height="30" fill="white" opacity="0.04" transform="rotate(45 65 25)" />
+            </svg>
+        </div>
+        <div class="container mx-auto px-4 relative z-10">
+            <p class="text-6xl sm:text-7xl font-black mb-4 tracking-tight leading-tight">ポートフォリオ</p>
+            <p class="text-xl sm:text-2xl mb-10 opacity-90 font-light max-w-2xl mx-auto">インフラ志望の学生です</p>
+            <a href="#projects"
+                class="inline-block bg-white text-green-700 px-10 py-4 rounded-full text-xl font-bold hover:bg-gray-200 transition duration-300 shadow-lg transform hover:scale-105">作品を見る</a>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-white rounded-2xl shadow-lg mx-4 md:mx-auto max-w-6xl mt-12">
+        <div class="container mx-auto px-6">
+            <h3 class="text-4xl sm:text-5xl font-bold text-center text-gray-900 mb-12">自己紹介</h3>
+            <div class="flex flex-col md:flex-row items-center md:space-x-12">
+                <div class="md:w-1/3 mb-10 md:mb-0">
+                    <img src="https://placehold.co/350x350/16a34a/FFFFFF?text=あなたの写真" alt="あなたの写真"
+                        class="rounded-full w-64 h-64 mx-auto object-cover shadow-2xl border-4 border-green-200 animate-pulse-subtle">
+                </div>
+                <div class="md:w-2/3 text-center md:text-left">
+                    <div class="bg-green-50 p-6 rounded-lg mb-6 shadow-inner">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-lg">
+                            <div class="font-semibold text-gray-800">名前:</div>
+                            <div class="text-gray-700">[あなたの名前]</div>
+                            <div class="font-semibold text-gray-800">学校名:</div>
+                            <div class="text-gray-700">[あなたの学校名]</div>
+                            <div class="font-semibold text-gray-800">卒業年次:</div>
+                            <div class="text-gray-700">[卒業年次]</div>
+                        </div>
+                    </div>
+                    <p class="text-lg leading-relaxed mb-6 text-gray-700">
+                        
+                    </p>
+                    <p class="text-lg leading-relaxed text-gray-700">
+                        常に新しい技術を学び、効率的で信頼性の高いソリューションを提供することを目指しています。詳細は「作品」セクションをご覧ください。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-20 bg-green-50 rounded-2xl shadow-lg mx-4 md:mx-auto max-w-6xl mt-12">
+        <div class="container mx-auto px-6">
+            <h3 class="text-4xl sm:text-5xl font-bold text-center text-gray-900 mb-12">スキル</h3>
+            <div id="skills-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 bg-white rounded-2xl shadow-lg mx-4 md:mx-auto max-w-6xl mt-12">
+        <div class="container mx-auto px-6">
+            <h3 class="text-4xl sm:text-5xl font-bold text-center text-gray-900 mb-12">作品</h3>
+
+            <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-green-50 rounded-2xl shadow-lg mx-4 md:mx-auto max-w-6xl mt-12">
+        <div class="container mx-auto px-6">
+            <h3 class="text-4xl sm:text-5xl font-bold text-center text-gray-900 mb-12">連絡先</h3>
+            <p class="text-lg text-center mb-10 text-gray-700">ご質問やプロジェクトのご相談など、お気軽にご連絡ください。</p>
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-6 sm:space-y-0 sm:space-x-8">
+                <a href="mailto:your.email@example.com"
+                    class="bg-green-700 text-white px-10 py-4 rounded-full text-lg font-semibold hover:bg-green-800 transition duration-300 shadow-lg transform hover:scale-105 flex items-center">
+                    <i class="fas fa-envelope mr-3 text-xl"></i> メールを送る
+                </a>
+                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer"
+                    class="bg-green-700 text-white px-10 py-4 rounded-full text-lg font-semibold hover:bg-green-800 transition duration-300 shadow-lg transform hover:scale-105 flex items-center">
+                    <i class="fab fa-github mr-3 text-xl"></i> GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-green-900 text-white py-10 mt-12 rounded-t-3xl">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-lg font-light">&copy; 2023 あなたの名前. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // 作品データをJSON形式で定義
+        const projectsData = [
+            {
+                id: 1,
+                title: 'プロジェクトA - スケーラブルなバックエンドAPI',
+                description: 'マイクロサービスアーキテクチャを採用し、高負荷に耐えるバックエンドAPIを構築。DockerとKubernetesでデプロイ。',
+                imageUrl: 'https://placehold.co/600x400/16a34a/FFFFFF?text=Project+A', // プレースホルダー画像
+                projectUrl: '#', // 実際の作品URLに置き換える
+                githubLink: '#', // 実際のGitHub URLに置き換える
+                technologies: ['Node.js', 'Express', 'MongoDB', 'Docker', 'Kubernetes', 'AWS EC2'],
+            },
+            {
+                id: 2,
+                title: 'プロジェクトB - CI/CDパイプライン自動化',
+                description: 'GitHub ActionsとTerraformを使用して、開発からデプロイまでのCI/CDパイプラインを完全に自動化。',
+                imageUrl: 'https://placehold.co/600x400/22c55e/FFFFFF?text=Project+B', // プレースホルダー画像
+                projectUrl: '#', // 実際の作品URLに置き換える
+                githubLink: '#', // 実際のGitHub URLに置き換える
+                technologies: ['Terraform', 'GitHub Actions', 'AWS S3', 'AWS Lambda'],
+            },
+            {
+                id: 3,
+                title: 'プロジェクトC - リアルタイムデータ処理システム',
+                description: '大量のストリーミングデータを処理し、リアルタイムで分析・可視化するシステムを構築。',
+                imageUrl: 'https://placehold.co/600x400/4ade80/FFFFFF?text=Project+C', // プレースホルダー画像
+                projectUrl: '#', // 実際の作品URLに置き換える
+                githubLink: '#', // 実際のGitHub URLに置き換える
+                technologies: ['Python', 'Kafka', 'PostgreSQL', 'Grafana'],
+            },
+            {
+                id: 4,
+                title: 'プロジェクトD - セキュリティ強化と監視',
+                description: '既存システムのセキュリティ診断と脆弱性対応、ログ監視とアラートシステムを導入し、運用を安定化。',
+                imageUrl: 'https://placehold.co/600x400/86efac/FFFFFF?text=Project+D', // プレースホルダー画像
+                projectUrl: '#', // 実際の作品URLに置き換える
+                githubLink: '#', // 実際のGitHub URLに置き換える
+                technologies: ['Linux', 'Nginx', 'Prometheus', 'Grafana', 'Security Audits'],
+            },
+            {
+                id: 5,
+                title: 'プロジェクトE - 分散型ログ収集システム',
+                description: 'FluentdとElasticsearch, Kibanaを組み合わせた分散型ログ収集・分析システムの構築。',
+                imageUrl: 'https://placehold.co/600x400/bbf7d0/000000?text=Project+E',
+                projectUrl: '#',
+                githubLink: '#',
+                technologies: ['Fluentd', 'Elasticsearch', 'Kibana', 'Linux'],
+            },
+            {
+                id: 6,
+                title: 'プロジェクトF - サーバーレスアプリケーション開発',
+                description: 'AWS LambdaとAPI Gatewayを活用したサーバーレスアプリケーションの設計と実装。',
+                imageUrl: 'https://placehold.co/600x400/dcfce7/000000?text=Project+F',
+                projectUrl: '#',
+                githubLink: '#',
+                technologies: ['AWS Lambda', 'API Gateway', 'DynamoDB', 'Serverless Framework'],
+            },
+        ];
+
+        // スキルデータをJSON形式で定義
+        const skillsData = [
+            {
+                category: 'バックエンド',
+                items: [
+                    { name: 'Node.js', iconClass: 'fab fa-node-js', iconColor: 'text-green-600' },
+                    { name: 'Python', iconClass: 'fab fa-python', iconColor: 'text-blue-600' },
+                    { name: 'Go', iconClass: 'fas fa-go', iconColor: 'text-sky-600' }, /* 仮のアイコン、Font AwesomeにはGoの直接的なアイコンはないため、適切なものに置き換えるかSVGを使用 */
+                ]
+            },
+            {
+                category: 'インフラ & クラウド',
+                items: [
+                    { name: 'AWS', iconClass: 'fab fa-aws', iconColor: 'text-orange-500' },
+                    { name: 'Docker', iconClass: 'fab fa-docker', iconColor: 'text-blue-500' },
+                    { name: 'Kubernetes', iconClass: 'fas fa-dharmachakra', iconColor: 'text-indigo-500' }, /* Kubernetesのロゴに似たアイコン */
+                ]
+            },
+            {
+                category: 'ツール & その他',
+                items: [
+                    { name: 'Git', iconClass: 'fab fa-git-alt', iconColor: 'text-red-500' },
+                    { name: 'GitHub', iconClass: 'fab fa-github', iconColor: 'text-gray-700' },
+                    { name: 'CI/CD', iconClass: 'fas fa-cogs', iconColor: 'text-yellow-500' },
+                ]
+            }
+        ];
+
+        // 作品を動的に生成する関数
+        function renderProjects() {
+            const projectsContainer = document.getElementById('projects-container');
+            projectsContainer.innerHTML = ''; // 既存のコンテンツをクリア
+
+            projectsData.forEach(project => {
+                const projectCard = `
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl hover:ring-2 hover:ring-green-300 transition duration-300 transform hover:-translate-y-2">
+                        <img src="${project.imageUrl}" alt="${project.title}" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/CCCCCC/000000?text=Image+Error';">
+                        <div class="p-6">
+                            <h4 class="text-2xl font-bold mb-2 text-gray-900">${project.title}</h4>
+                            <p class="text-gray-600 mb-4 text-base leading-relaxed">${project.description}</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                ${project.technologies.map(tech => `<span class="bg-green-100 text-green-800 text-xs font-medium px-3 py-1 rounded-full">${tech}</span>`).join('')}
+                            </div>
+                            <div class="flex flex-col sm:flex-row justify-center sm:justify-start gap-4 mt-4">
+                                ${project.githubLink ? `<a href="${project.githubLink}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-green-700 text-white px-5 py-2 rounded-full text-md font-semibold hover:bg-green-800 transition duration-300 shadow-md transform hover:scale-105">
+                                    <i class="fab fa-github mr-2"></i> GitHub
+                                </a>` : ''}
+                                ${project.projectUrl ? `<a href="${project.projectUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-green-600 text-white px-5 py-2 rounded-full text-md font-semibold hover:bg-green-700 transition duration-300 shadow-md transform hover:scale-105">
+                                    <i class="fas fa-external-link-alt mr-2"></i> 作品を見る
+                                </a>` : ''}
+                            </div>
+                        </div>
+                    </div>
+                `;
+                projectsContainer.insertAdjacentHTML('beforeend', projectCard);
+            });
+        }
+
+        // スキルを動的に生成する関数
+        function renderSkills() {
+            const skillsContainer = document.getElementById('skills-container');
+            skillsContainer.innerHTML = ''; // 既存のコンテンツをクリア
+
+            skillsData.forEach(category => {
+                const skillCategoryCard = `
+                    <div class="bg-white p-8 rounded-xl shadow-md text-center hover:shadow-xl hover:ring-2 hover:ring-green-300 transition duration-300 transform hover:-translate-y-1">
+                        <h4 class="text-3xl font-bold mb-6 text-gray-800">${category.category}</h4>
+                        <div class="flex flex-col space-y-4"> ${category.items.map(item => `
+                                <div class="relative group flex items-center justify-start space-x-4 p-2 rounded-md hover:bg-green-50 transition duration-200"> <i class="${item.iconClass} text-5xl ${item.iconColor} group-hover:text-green-800 transition duration-300"></i>
+                                    <span class="text-xl font-medium text-gray-700 group-hover:text-green-900 transition duration-300">
+                                        ${item.name}
+                                    </span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+                skillsContainer.insertAdjacentHTML('beforeend', skillCategoryCard);
+            });
+        }
+
+        // ページロード時に作品とスキルをレンダリング
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProjects();
+            renderSkills();
+        });
+    </script>
+</body>
+
+</html>
